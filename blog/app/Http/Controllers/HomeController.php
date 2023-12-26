@@ -59,11 +59,11 @@ public function create_post(){
 
 public function user_post(Request $request){
 
-$user=Auth()->user();
+$user=Auth()->user();   
 
 $userid=$user->id; 
-
-$username =$user->name;
+ 
+$username=$user->name;
 
 $usertype=$user->usertype; 
 
@@ -73,9 +73,11 @@ $post->title = $request->title;
 
 $post->description= $request->description;
 
-$post-> user_id=$userid;
 
-$post-> name=$userid;
+
+$post->user_id=$userid;
+
+$post->name=$userid;
 
 $post->usertype=$usertype;
 
@@ -102,5 +104,14 @@ return redirect()->back();
 }
 
 
+public function my_post()
+{
+
+    $user=Auth::user();
+    $userid=$user->id;
+    $data = Post::where('user_id','=',$userid)->get();
+    return view('home.my_post',compact('data'));
+
+}
 
 }
