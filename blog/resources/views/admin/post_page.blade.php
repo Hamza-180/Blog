@@ -68,7 +68,7 @@
     <div class="div_center">
 
     <label>Post Titel</label>
-    <input type="text" name="titel" >
+    <input type="text" name="title" >
 
     </div>
 

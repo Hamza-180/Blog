@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
+
+
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -55,6 +57,13 @@ class AdminController extends Controller
     $post->save ();
 
         return redirect()->back()->with('message','post added Succesfully');
+}
+
+public function show_post()
+{
+    $post= post::all();
+
+    return view('admin.show_post',compact('post'));
 }
 
 }
