@@ -48,6 +48,19 @@
       
     <div class="page-content">
 
+    @if(session()->has('message'))
+
+
+    <div class="alert alert-danger" >
+
+    <button type="button" class="close" data-dismiss="alert " aria-hidden="true" >x</button>
+
+    {{session()->get('message')}}
+
+    </div>
+
+    @endif
+
     <h1 class="title_deg" >All Post</h1>
 
     <table class="table_deg" >
@@ -75,7 +88,7 @@
     </td>
 
     <td>
-        <a href="{{url('delete_post',$post->id)}}" class="btn btn-danger">Delete</a>
+        <a href="{{url('delete_post',$post->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this ?')">Delete</a>
     </td>
 
     </tr>

@@ -73,7 +73,7 @@ public function delete_post($id){
 
     $post->delete();
 
-    return redirect()->back();
+   return redirect()->back()->with('message','Post Deleted Succesfully');
 }
 
 }
