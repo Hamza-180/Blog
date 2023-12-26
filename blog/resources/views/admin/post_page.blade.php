@@ -95,19 +95,10 @@
 </div>
    
 
-
-
 </form>
 
+  </div>
     </div>
-    </div>
-   
-
-
-
-
-    
-
-    @include('admin.footer')
+   @include('admin.footer')
   </body>
 </html>
