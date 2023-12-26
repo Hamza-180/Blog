@@ -28,3 +28,13 @@
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       
+
+      <style>
+
+      .container-fluid{
+
+            position: relative;
+            z-index: 1;
+      }
+
+      </style>
