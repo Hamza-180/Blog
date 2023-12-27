@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController; 
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,8 @@ Route::get('/create_post', [HomeController::class,'create_post']) ->middleware('
 Route::post('/user_post', [HomeController::class,'user_post']);
 
 Route::get('/my_post', [HomeController::class,'my_post']) ->middleware('auth');  
+
+Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
+
+Route::resource('faq-categories', 'FaqCategoryController');
+Route::resource('faq-entries', 'FaqEntryController');
