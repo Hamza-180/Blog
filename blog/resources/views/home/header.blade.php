@@ -30,10 +30,10 @@
                <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
                <div class="menu_main">
                   <ul>
-                     <li class="active"><a href="index.html">Home</a></li>
-                     <li><a href="about.html">About</a></li>
-                     <li><a href="services.html">Services</a></li>
-                     <li><a href="blog.html">Blog</a></li>
+                     <li class="active"><a href=""></a></li>
+                     <li><a href=""></a></li>
+                     <li><a href=""></a></li>
+                     <li><a href=""></a></li>
 
                      @if (Route::has('login'))
 
