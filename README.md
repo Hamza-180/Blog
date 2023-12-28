@@ -20,7 +20,7 @@ en begrijpen waaroom hij dit zo dee ik heb  het zo beter geleerd en beter begrep
 
 ik heb ook gebruik gemaakt van StackOverflow  een forum waar veel mensen hun problemen daar zetten en mensen kunnen  hierop beantwoorden.
 
-Ik heb ook gebruikt gemaakt van canvas soms moet je niet te ver zoeken.
+Ik heb ook gebruikt gemaakt van canvas soms moest ikniet te ver zoeken.
 
 
 
