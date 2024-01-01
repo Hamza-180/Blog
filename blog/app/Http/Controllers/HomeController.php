@@ -114,4 +114,11 @@ public function my_post()
 
 }
 
+
+public function contact()
+{
+
+    return view('home.contact');
+}
+
 }
