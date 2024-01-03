@@ -12,9 +12,9 @@ class PostsSeeder extends Seeder
         
         DB::table('posts')->insert([
             'title' => 'Premier post',
-            'description' => 'Ceci est la description du premier post.',
+            'description' => 'hier is de descirption van het eerste post.',
             'image' => 'image1.jpg',
-            'name' => 'Auteur du premier post',
+            'name' => 'Auteur van eerste post',
             'user_id' => 1, 
             'post_status' => 'published',
             'usertype' => 'user',
@@ -24,9 +24,9 @@ class PostsSeeder extends Seeder
 
         DB::table('posts')->insert([
             'title' => 'Deuxième post',
-            'description' => 'Ceci est la description du deuxième post.',
+            'description' => 'hier is de descirption van het tweede post .',
             'image' => 'image2.jpg',
-            'name' => 'Auteur du deuxième post',
+            'name' => 'Auteur van tweede post',
             'user_id' => 2, 
             'post_status' => 'draft',
             'usertype' => 'admin',

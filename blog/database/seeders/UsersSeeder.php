@@ -10,7 +10,7 @@ class UsersSeeder extends Seeder
 {
     public function run()
     {
-        $email = 'user_' . Str::random(5) . '@example.com';
+        $email = 'user_' . Str::random(5) . 'user@gmailcom';
         DB::table('users')->insert([
             'name' => 'user',
             'email' => $email,
