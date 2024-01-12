@@ -76,7 +76,7 @@
 
       </form>
       </div>
-     
+      <a href="/" class="btn btn-primary">Back to Home</a>
       @include('home.footer')
    </body>
 </html>

@@ -6,6 +6,7 @@ https://github.com/Hamza-180/Blog.git
 
 user@gmail.com
  Wachtwoord = user1234
+ 
 
 
 

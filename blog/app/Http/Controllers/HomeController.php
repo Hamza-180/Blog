@@ -105,15 +105,7 @@ return redirect()->back();
 }
 
 
-public function my_post()
-{
-
-    $user=Auth::user();
-    $userid=$user->id;
-    $data = Post::where('user_id','=',$userid)->get();
-    return view('home.my_post',compact('data'));
-
-}
+    
 
 
 public function contact()
@@ -121,5 +113,12 @@ public function contact()
 
     return view('home.contact');
 }
+
+
+public function readme()
+    {
+        return view('home.readme');
+    }
+
 
 }
