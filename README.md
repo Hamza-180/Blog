@@ -7,7 +7,7 @@ https://github.com/Hamza-180/Blog.git
 user@gmail.com
  Wachtwoord = user1234
  
-
+http://127.0.0.1:8000/readme   (about page)
 
 
 In deze project heb ik gebruikt gemaakt van
