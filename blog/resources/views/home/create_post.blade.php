@@ -71,12 +71,13 @@
         <div class="field_deg">
             
             <input type="submit" value="Add Post"  class="btn btn-outline-secondary" >
+           
         </div>
 
-
+        <a href="/" class="btn btn-primary">Back to Home</a>
       </form>
       </div>
-      <a href="/" class="btn btn-primary">Back to Home</a>
+      
       @include('home.footer')
    </body>
 </html>
