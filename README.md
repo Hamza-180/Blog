@@ -13,7 +13,7 @@ In deze project heb ik gebruikt gemaakt van
 {
 "Chat GPT"
 
-https://www.youtube.com/watch?v=veBSb9JiKTA&list=PLm8sgxwSZoffiTghh0cqMj0tGlonrouWX&index=2   ('@WEB TECHKNOWLEDGE')
+ ('@WEB TECHKNOWLEDGE  BLOG ')
 
 in deze video heb ik niet gewoon het zelfde gedaan omdat het niet altijd werkt zo als hem daarom probeerde ik hem te volgen op mijn eigen manier
 en begrijpen waaroom hij dit zo dee ik heb  het zo beter geleerd en beter begrepen dan chat gpt zelf waar je maar dan copie past.
