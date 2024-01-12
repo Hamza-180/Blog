@@ -54,6 +54,7 @@ class HomeController extends Controller
 public function create_post(){ 
     
     return view('home.create_post');
+   
 }
 
 
