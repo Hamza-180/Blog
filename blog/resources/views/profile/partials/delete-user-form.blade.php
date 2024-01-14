@@ -49,6 +49,7 @@
                 <x-danger-button class="ms-3">
                     {{ __('Delete Account') }}
                 </x-danger-button>
+                <a href="/" class="btn btn-primary">Back to Home</a>
             </div>
         </form>
     </x-modal>

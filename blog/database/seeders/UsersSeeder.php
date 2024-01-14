@@ -10,13 +10,15 @@ class UsersSeeder extends Seeder
 {
     public function run()
     {
-        $email = 'user_' . Str::random(5) . ('user@gmail.com');
+        $email = 'user_' . Str::random(5) . 'user@gmail.com';
         DB::table('users')->insert([
             'name' => 'user',
             'email' => ('user@gmail.com'),
             'email_verified_at' => now(),
             'password' => Hash::make('user1234'),
             'usertype' => 'user',
+            'biography' => 'Hello im Hamza.', 
+            'birthday' => now()->subYears(21), 
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),

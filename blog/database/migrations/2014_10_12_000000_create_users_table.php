@@ -19,6 +19,8 @@ return new class extends Migration
             
             $table->string('password');
             $table->string('usertype')->default('user');
+            $table->text('biography')->nullable(); 
+            $table->date('birthday')->nullable(); 
             $table->rememberToken();
             $table->timestamps();
         });

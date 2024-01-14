@@ -26,8 +26,13 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+
+        
         
         $request->user()->fill($request->validated());
+
+        $request->user()->biography = $request->input('biography');
+        $request->user()->birthday = $request->input('birthday');
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
@@ -58,4 +63,6 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    
 }
