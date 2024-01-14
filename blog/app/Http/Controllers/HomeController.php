@@ -120,5 +120,9 @@ public function readme()
         return view('home.readme');
     }
 
+    public function FAQ()
+    {
+        return view('home.faq');
+    }
 
 }

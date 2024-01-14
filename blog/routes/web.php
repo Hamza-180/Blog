@@ -58,4 +58,6 @@ Route::get('/contact', [HomeController::class,'contact']) ;
 
 Route::get('/readme', [HomeController::class,'readme']) ;  
 
+Route::get('/faq', [HomeController::class,'faq']) ;  
+
 

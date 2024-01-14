@@ -52,7 +52,10 @@
                     <li><a href="{{url('contact')}}">contact us </a></li>
 
                     <li><a href="{{url('create_post')}}">Create Post</a></li>
+
                     <li><a href="/readme">List of source</a></li>
+
+                    <li><a href="/faq">FAQ</a></li>
 
                     @else
 
@@ -64,6 +67,8 @@
                      <li><a href="{{url('contact')}}">contact us </a></li>
 
                      <li><a href="/readme">List of source</a></li>
+
+                     <li><a href="/faq">FAQ</a></li>
 
 
                 @endauth

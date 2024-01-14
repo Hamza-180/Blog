@@ -11,7 +11,7 @@ class PostsSeeder extends Seeder
     {
         
         DB::table('posts')->insert([
-            'title' => 'Premier post',
+            'title' => 'eerste post',
             'description' => 'hier is de descirption van het eerste post.',
             'image' => 'image1.jpg',
             'name' => 'Auteur van eerste post',
@@ -23,7 +23,7 @@ class PostsSeeder extends Seeder
         ]);
 
         DB::table('posts')->insert([
-            'title' => 'Deuxième post',
+            'title' => 'tweede post',
             'description' => 'hier is de descirption van het tweede post .',
             'image' => 'image2.jpg',
             'name' => 'Auteur van tweede post',
