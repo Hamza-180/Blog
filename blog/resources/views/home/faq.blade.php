@@ -27,7 +27,7 @@
         <h3 style="color:red"> !! voor dat je op deze knop drukt moet je u eerste inloggen !! </h3>
 
         <p>Als deze link niet werkt zelf als ge ingelogd bent  gaat terug naar home en bovenaan kan je daar een post toevoegen bij create a post maar je moet u wel inloggen  </p>
-        <a href="post_details" class="btn btn-primary">Post toevoegen</a>
+        <a href="create_post" class="btn btn-primary">Post toevoegen</a>
 
     </div>
 
