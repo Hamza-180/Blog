@@ -33,3 +33,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+![image](https://github.com/Hamza-180/Blog/assets/132839490/a7a8eebd-a389-45ad-aa44-139fc176a40a)     MailTrap voor het ontvangen van email bij contact Page
+
