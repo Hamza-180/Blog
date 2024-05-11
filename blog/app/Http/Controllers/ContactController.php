@@ -17,7 +17,7 @@ class ContactController extends Controller
         ];
 
         Mail::send('emails.email', ['data' => $data], function ($message) use ($data) {
-            $message->to('admin@example.com')
+            $message->to('admin@ehb.be')
                     ->subject('New Contact Message')
                     ->from($data['email'])
                     ->replyTo($data['email']);
