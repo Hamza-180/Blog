@@ -80,16 +80,16 @@
         <p class="answer">Als je op de knop drukt onderaan ga je terechtkomen op een pagina waar je jouw post kunt toevoegen.</p>
         <p class="answer"><strong style="color:red;">Let op:</strong> Voordat je op deze knop drukt, moet je eerst inloggen.</p>
         <p class="answer">Als deze link niet werkt, zelfs als je ingelogd bent, ga terug naar de homepagina en bovenaan kun je daar een post toevoegen bij 'Create a post', maar je moet wel ingelogd zijn.</p>
-        <a href="{{ route('faq_entries.create') }}" class="btn">Post toevoegen</a>
+        <a href="create_post" class="btn">Post toevoegen</a>
     </div>
 
     <div class="faq-item">
         <h3 class="question">Hoe kan ik contact opnemen?</h3>
         <p class="answer">Als je ons wilt contacteren, klik dan op de onderstaande knop. Je wordt dan doorverwezen naar een pagina waar je ons kunt bereiken.</p>
-        <a href="{{ route('contact') }}" class="btn">Neem contact op</a>
+        <a href="contact" class="btn">Neem contact op</a>
     </div>
 
-    <a href="{{ route('home') }}" class="back-btn">Terug naar Home</a>
+    <a href="/" class="back-btn">Terug naar Home</a>
 </div>
 
 </body>
