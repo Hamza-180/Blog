@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController; 
@@ -48,3 +49,7 @@ Route::post('/user_post', [HomeController::class,'user_post']);
 Route::get('/contact', [HomeController::class,'contact']);
 Route::get('/readme', [HomeController::class,'readme']);
 Route::get('/faq', [HomeController::class,'faq']);
+
+
+Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
+

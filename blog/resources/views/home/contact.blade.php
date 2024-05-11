@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+
 @if(session()->has('message'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Success!</strong> {{ session()->get('message') }}
@@ -22,7 +32,7 @@
             <!-- Contact form start here -->
             <div class="col-md-6">
                 <div class="contact-form">
-                    <form >
+                    <form action="{{ route('send.email') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -62,20 +72,23 @@
                     </p>
                 </div>
             </div>
-            <a href="/" class="btn btn-primary">Back to Home</a>
         </div>
+        <a href="/" class="btn btn-primary">Back to Home</a>
     </div>
 </div>
 
 <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        alert('Form submitted successfully!');
-    });
-
-  
     window.setTimeout(function () {
         $(".alert").fadeTo(500, 0).slideUp(500, function () {
             $(this).remove();
         });
     }, 3000); 
 </script>
+
+
+
+</body>
+
+
+
+</html>
