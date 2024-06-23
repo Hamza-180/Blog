@@ -74,6 +74,9 @@
 
         </div>
         <br>
-        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href="/" class="btn btn-primary" style="color: white; background-color: #007bff; border: none; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; transition: background-color 0.3s ease;">
+    Back to Home
+</a>
+
     </form>
 </section>

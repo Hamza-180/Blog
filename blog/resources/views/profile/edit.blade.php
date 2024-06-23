@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Profile') }}
 
-            <a href="/" class="btn btn-primary" style="color: blue; margin-left: 80px; border-radius: 10px; padding: 10px 15px; text-decoration: none; display: inline-block;">Back to Home</a>
+            
 
 
 
@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-           
+                    
 
           
 
@@ -38,6 +38,10 @@
                     @include('profile.partials.delete-user-form')
                 </div>
             </div>
+            
         </div>
+            
+        
     </div>
+            
 </x-app-layout>
