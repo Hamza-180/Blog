@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
@@ -10,8 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    // Existing methods...
-
     public function post_page()
     {
         return view('admin.post_page');
@@ -19,24 +16,33 @@ class AdminController extends Controller
 
     public function add_post(Request $request)
     {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $user = Auth::user();
         $user_id = $user->id;
         $name = $user->name;
         $usertype = $user->usertype;
 
-        $post = new Post;
-        $post->title = $request->title;
-        $post->description = $request->description;
-        $post->post_status = 'active';
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
+        $post->post_status = 'pending'; // Assurez-vous que cette valeur est valide selon votre migration
         $post->user_id = $user_id;
         $post->name = $name;
         $post->usertype = $usertype;
 
-        $image = $request->image;
+        $image = $request->file('image');
+
         if ($image) {
             $imagename = time() . '.' . $image->getClientOriginalExtension();
-            $request->image->move('postimage', $imagename);
+            $image->move(public_path('postimage'), $imagename);
             $post->image = $imagename;
+        } else {
+            $post->image = 'default_image.png'; // Définissez une valeur par défaut appropriée ou laissez NULL si permis
         }
 
         $post->save();
@@ -65,15 +71,23 @@ class AdminController extends Controller
 
     public function update_post(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $data = Post::find($id);
-        $data->title = $request->title;
-        $data->description = $request->description;
-        $image = $request->image;
+        $data->title = $request->input('title');
+        $data->description = $request->input('description');
+
+        $image = $request->file('image');
         if ($image) {
             $imagename = time() . '.' . $image->getClientOriginalExtension();
-            $request->image->move('postimage', $imagename);
+            $image->move(public_path('postimage'), $imagename);
             $data->image = $imagename;
         }
+
         $data->save();
         return redirect()->back()->with('message', 'Post updated successfully');
     }
@@ -86,16 +100,13 @@ class AdminController extends Controller
 
     public function promoteUser($id)
     {
-        // Check if the authenticated user is an admin
         if (Auth::user()->usertype != 'admin') {
             return redirect()->back()->with('error', 'You do not have permission to perform this action.');
         }
 
-        // Find the user by ID
         $user = User::find($id);
 
         if ($user) {
-            // Promote the user to admin
             $user->usertype = 'admin';
             $user->save();
 

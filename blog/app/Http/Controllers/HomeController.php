@@ -47,39 +47,39 @@ class HomeController extends Controller
     }
 
     public function user_post(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-        $user = Auth::user();
-        $userid = $user->id;
-        $username = $user->name;
-        $usertype = $user->usertype;
+    $user = Auth::user();
+    $userid = $user->id;
+    $username = $user->name;
+    $usertype = $user->usertype;
 
-        $post = new Post();
-        $post->title = $request->input('title');
-        $post->description = $request->input('description');
-        $post->user_id = $userid;
-        $post->name = $username;
-        $post->usertype = $usertype;
-        $post->post_status = 'pending'; // Assurez-vous que cette valeur est valide selon votre migration
+    $post = new Post();
+    $post->title = $request->input('title');
+    $post->description = $request->input('description');
+    $post->user_id = $userid;
+    $post->name = $username;
+    $post->usertype = $usertype;
+    $post->post_status = 'pending';
+    $image = $request->file('image');
 
-        $image = $request->file('image');
-
-        if ($image) {
-            $imagename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('postimage'), $imagename);
-            $post->image = $imagename;
-        } else {
-            $post->image = 'default_image.png'; // Définissez une valeur par défaut appropriée ou laissez NULL si permis
-        }
-
-        $post->save();
-        return redirect()->back()->with('success', 'Post created successfully!');
+    if ($image) {
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('postimage'), $imagename);
+        $post->image = $imagename;
+    } else {
+        $post->image = 'default_image.png';
     }
+
+    $post->save();
+    return redirect()->back()->with('success', 'Post created successfully!');
+}
+
 
     public function contact()
     {
