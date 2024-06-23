@@ -6,14 +6,15 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FaqCategoryController;
+use App\Http\Controllers\FaqEntryController;
+
 // Public routes
 Route::get('/', [HomeController::class, 'homepage']);
 Route::get('/post_details/{id}', [HomeController::class, 'post_details']);
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/readme', [HomeController::class, 'readme']);
-Route::get('/faq', function () {
-    return view('home.faqq');
-});
+Route::get('/faq', [FaqCategoryController::class, 'index'])->name('faq.index');
 
 // Auth routes
 require __DIR__.'/auth.php';
@@ -45,11 +46,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/edit_page/{id}', [AdminController::class, 'edit_page']);
     Route::post('/update_post/{id}', [AdminController::class, 'update_post']);
 
-    Route::middleware(['auth', 'admin'])->group(function () {
-        Route::get('/admin/promote', [AdminController::class, 'adminPromote'])->name('admin.promote');
-        Route::post('/promote_user/{id}', [AdminController::class, 'promoteUser'])->name('promote.user');
-    });
+    // Admin user management routes
+    Route::get('/admin/promote', [AdminController::class, 'adminPromote'])->name('admin.promote');
+    Route::post('/promote_user/{id}', [AdminController::class, 'promoteUser'])->name('promote.user');
     
+    // Admin FAQ management routes
+    Route::resource('faq/categories', FaqCategoryController::class)->except(['index', 'show']);
+    Route::resource('faq/categories.entries', FaqEntryController::class)->shallow()->except(['show']);
 });
 
 

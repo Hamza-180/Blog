@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class FaqEntry extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['category_id', 'question', 'answer'];
+
+    public function category()
+    {
+        return $this->belongsTo(FaqCategory::class);
+    }
 }
+

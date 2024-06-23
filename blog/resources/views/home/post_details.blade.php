@@ -24,10 +24,12 @@
                         
                         <p>Post by <b>{{$post->name}}</b> </p>
 
-                       
+                           <br>
+                           
+                        <a href="/" class="btn btn-primary">Back to Home</a>
         </div>
       
-        <a href="/" class="btn btn-primary">Back to Home</a>
+        
 
       @include('home.footer')
    </body>

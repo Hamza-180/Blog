@@ -5,14 +5,14 @@
                      <div class="container">
                         <h1 class="banner_taital">Web Developer at EhB</h1>
                         <p class="banner_text">Hoi allemaal! 👋 Als student heb ik mijn passie voor schrijven omgezet in een blog waar ik mijn beste beentje voor zet. 📚✨ Duik mee in mijn wereld van ontdekkingen, uitdagingen en inzichten. 🌐💡 Lees mijn nieuwste berichten en deel in mijn reis van groei en creativiteit. Bedankt voor het supporten van een student die haar best doet! 🚀📝 #StudentBlogger #PassieProject #BlogLife</p>
-                        <div class="read_bt"><a href="">Get A Quote</a></div>
+                        
                      </div>
                   </div>
                   <div class="carousel-item">
                      <div class="container">
                         <h1 class="banner_taital">Web Developer at EhB</h1>
                         <p class="banner_text">Hoi allemaal! 👋 Als student heb ik mijn passie voor schrijven omgezet in een blog waar ik mijn beste beentje voor zet. 📚✨ Duik mee in mijn wereld van ontdekkingen, uitdagingen en inzichten. 🌐💡 Lees mijn nieuwste berichten en deel in mijn reis van groei en creativiteit. Bedankt voor het supporten van een student die haar best doet! 🚀📝 #StudentBlogger #PassieProject #BlogLife</p>
-                        <div class="read_bt"><a href="">Get A Quote</a></div>
+                        
                      </div>
                   </div>
                   <div class="carousel-item">
