@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             FailedJobsSeeder::class,
             PersonalAccessTokensSeeder::class,
             PostsSeeder::class,
-            AdminSeeder::class,
+            
             
         ]);
     }
