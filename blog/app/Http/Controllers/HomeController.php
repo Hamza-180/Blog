@@ -10,19 +10,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-
-        $post=Post::all();
+        $post = Post::all();
         if (Auth::id()) {
             $usertype = Auth()->user()->usertype;
 
             if ($usertype == 'user') {
-                return view('home.homepage',compact('post'));   
-
-
+                return view('home.homepage', compact('post'));
             } elseif ($usertype == 'admin') {
                 return view('admin.adminhome');
-
-
             } else {
                 return redirect()->back();
             }
@@ -34,88 +29,64 @@ class HomeController extends Controller
         return view('post');
     }
 
-    public function homepage(){
-
-        $post = Post:: all();
-        return view('home.homepage',compact('post'));
+    public function homepage()
+    {
+        $post = Post::all();
+        return view('home.homepage', compact('post'));
     }
-   
-    public function post_details($id){
-        {
 
-            $post = Post::find($id);
+    public function post_details($id)
+    {
+        $post = Post::find($id);
+        return view('home.post_details', compact('post'));
+    }
 
-            return view('home.post_details',compact('post'));
+    public function create_post()
+    {
+        return view('home.create_post');
+    }
+
+    public function user_post(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $user = Auth::user();
+        $userid = $user->id;
+        $username = $user->name;
+        $usertype = $user->usertype;
+
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
+        $post->user_id = $userid;
+        $post->name = $username;
+        $post->usertype = $usertype;
+        $post->post_status = 'pending'; // Assurez-vous que cette valeur est valide selon votre migration
+
+        $image = $request->file('image');
+
+        if ($image) {
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('postimage'), $imagename);
+            $post->image = $imagename;
+        } else {
+            $post->image = 'default_image.png'; // Définissez une valeur par défaut appropriée ou laissez NULL si permis
         }
-}
 
+        $post->save();
+        return redirect()->back()->with('success', 'Post created successfully!');
+    }
 
+    public function contact()
+    {
+        return view('home.contact');
+    }
 
-public function create_post(){ 
-    
-    return view('home.create_post');
-   
-}
-
-
-public function user_post(Request $request){
-
-$user=Auth()->user();   
-
-$userid=$user->id; 
- 
-$username=$user->name;
-
-$usertype=$user->usertype; 
-
-$post = new Post();
-
-$post->title = $request->title;
-
-$post->description= $request->description;
-
-
-
-$post->user_id=$userid;
-
-$post->name=$userid;
-
-$post->usertype=$usertype;
-
-$post ->post_status='pending';
-
-
-
-$image= $request->image;
-
-if($image){ 
-
-    $imagename=time().'.'.$image->getClientOriginalExtension();
-
-    $request->image->move('postimage',$imagename);
-
-    $post->image=$imagename;
-}
-
-
-$post -> save();
-return redirect()->back();
-    
-
-}
-
-
-    
-
-
-public function contact()
-{
-
-    return view('home.contact');
-}
-
-
-public function readme()
+    public function readme()
     {
         return view('home.readme');
     }
@@ -124,5 +95,4 @@ public function readme()
     {
         return view('home.faq');
     }
-
 }

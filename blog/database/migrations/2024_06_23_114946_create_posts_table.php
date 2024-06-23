@@ -17,10 +17,10 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->string('image');
+            $table->string('image')->nullable(); // Permettre NULL pour l'image
             $table->string('name');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->enum('post_status', ['draft', 'published']);
+            $table->enum('post_status', ['draft', 'published', 'pending']); // Ajouter 'pending' ici
             $table->string('usertype');
             $table->timestamps();
         });
