@@ -25,6 +25,8 @@
     <ul class="list-unstyled">
         <li><a href="{{url('post_page')}}"><i class="icon-grid"></i>Add post</a></li>
         <li><a href="{{url('/show_post')}}"><i class="fa fa-bar-chart"></i>Show Post</a></li>
+        <li><a href="{{url('/admin/promote')}}"><i class="fa fa-users"></i>Promote Users</a></li>
+
         <li>
             <!-- Add an onclick event to trigger the JavaScript function -->
             <a href="/" class="btn btn-primary" style="color: black;" onclick="showAlert()">Back to Home as user</a>
