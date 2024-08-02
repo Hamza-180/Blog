@@ -1,3 +1,10 @@
+
+
+![image](https://github.com/Hamza-180/Blog/assets/132839490/a7a8eebd-a389-45ad-aa44-139fc176a40a)     MailTrap voor het ontvangen van email bij contact Page
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -35,7 +42,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
-![image](https://github.com/Hamza-180/Blog/assets/132839490/a7a8eebd-a389-45ad-aa44-139fc176a40a)     MailTrap voor het ontvangen van email bij contact Page
+
 
 
 
